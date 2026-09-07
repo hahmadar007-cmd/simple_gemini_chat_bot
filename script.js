@@ -1,5 +1,4 @@
 //!                       ||-----------------Gemini Chatbot-----------------||
-
 const api_input=document.getElementById("my_api");
 const button=document.getElementById("send_btn");
 const output=document.getElementById("output");
@@ -26,8 +25,7 @@ button.addEventListener("click",async function(event){
     alert("Please enter your Gemini API key first!");
     return;
   }
-
-  const Api_url=`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${api}`;
+const Api_url=`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${api}`;
 
   output.innerHTML+="<hr><br><br>"+prompt+"<br><br>";
   try{
@@ -62,7 +60,8 @@ if(data.error){
 }
 
 output.innerHTML+="<br><br>"+ data.candidates[0].content.parts[0].text + "<hr>";
-  }catch(error){
+  }
+catch(error){
     console.log(error);
     output.innerHTML+="<br> Error Limit Reached ! : "+error.message;
   }
