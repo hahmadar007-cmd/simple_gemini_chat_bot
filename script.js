@@ -29,8 +29,7 @@ const Api_url=`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.
 
   output.innerHTML+="<hr><br><br>"+prompt+"<br><br>";
   try{
-    const response = await fetch(Api_url,
-{
+    const response = await fetch(Api_url,{
     method : "POST",
 
    headers : {
@@ -63,6 +62,6 @@ output.innerHTML+="<br><br>"+ data.candidates[0].content.parts[0].text + "<hr>";
   }
 catch(error){
     console.log(error);
-    output.innerHTML+="<br> Error Limit Reached ! : "+error.message;
+    output.innerHTML+="<br>"+error.message;
   }
 });
